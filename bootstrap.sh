@@ -15,8 +15,8 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
-    mkdir -p ~/.m2/
-    cp settings.xml ~/.m2/
+    # mkdir -p ~/.m2/
+    # cp settings.xml ~/.m2/
 	# source ~/.zshrc;
 }
 

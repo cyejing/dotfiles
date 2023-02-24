@@ -2,7 +2,10 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin main;
+# git pull origin main;
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 
 function doIt() {
 	rsync --exclude ".git/" \
@@ -12,7 +15,9 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
-	source ~/.zshrc;
+    mkdir -p ~/.m2/
+    cp settings.xml ~/.m2/
+	# source ~/.zshrc;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

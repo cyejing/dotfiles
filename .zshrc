@@ -80,7 +80,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    macos
     rust
+    mvn
     zsh-autosuggestions
     zsh-syntax-highlighting
 )

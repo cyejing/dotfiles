@@ -1,5 +1,7 @@
 # Basic
 # alias ls="gls --color -h --group-directories-first -F"
+alias vi='lvim'
+alias vim='lvim'
 alias ll='ls -l'
 alias la='ls -a'
 alias cl='clear'

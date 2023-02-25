@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function doIt() {
 	rsync --include ".zshrc" \
         --include ".aliases.zsh" \

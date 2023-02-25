@@ -28,7 +28,7 @@ alias unstage="git restore --staged ."
 alias wip="commit wip"
 
 # More
-alias reloadshell="source $HOME/.zshrc"
+alias reloadshell="source $HOME/.zshrc && source ~/.zshenv"
 
 # jdk
 if [ "$(uname -s)" = "Darwin" ] ; then

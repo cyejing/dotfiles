@@ -30,6 +30,15 @@ alias wip="commit wip"
 # More
 alias reloadshell="source $HOME/.zshrc"
 
+# jdk
+if [ "$(uname -s)" = "Darwin" ] ; then
+    alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+    alias j17="export JAVA_HOME=`/usr/libexec/java_home -v 17`"
+elif [ "$(uname -s)" = "Linux" ] ; then
+    alias j8="sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64"
+    alias j17="sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64"
+fi
+
 # alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"

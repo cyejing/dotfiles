@@ -123,4 +123,3 @@ source $ZSH/oh-my-zsh.sh
 
 ## More
 
-# bindkey '^q' autosuggest-accept

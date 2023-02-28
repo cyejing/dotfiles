@@ -8,8 +8,6 @@ function doIt() {
         --include ".ideavimrc" \
         --include ".m2" \
         --include ".m2/settings.xml" \
-        --include ".ssh" \
-        --include ".ssh/config" \
         --include ".npmrc" \
         --include ".p10k.zsh" \
         --include ".vimrc" \

@@ -17,6 +17,7 @@
     st = status
 [merge]
     ff = only
+	tool = vimdiff
 [fetch]
     prune = true
 [rebase]
@@ -28,3 +29,10 @@
 [core]
     editor = /usr/local/bin/lvim
     excludesfile = ~/.gitignore
+[difftool]
+	prompt = false
+	trustExitCode = true
+[mergetool]
+	trustExitCode = true
+[mergetool "vimdiff"]
+	path = /usr/local/bin/lvim

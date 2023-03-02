@@ -5,7 +5,6 @@ alias vim='lvim'
 alias nvim='lvim'
 alias ll='ls -l'
 alias la='ls -a'
-alias cl='clear'
 alias k='kubectl'
 
 # Proxy
@@ -36,6 +35,7 @@ alias reloadshell="source $HOME/.zshrc && source ~/.zshenv"
 # jdk
 if [ "$(uname -s)" = "Darwin" ] ; then
     alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+    alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`"
     alias j17="export JAVA_HOME=`/usr/libexec/java_home -v 17`"
 elif [ "$(uname -s)" = "Linux" ] ; then
     alias j8="sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64"

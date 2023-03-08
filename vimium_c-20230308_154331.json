@@ -1,0 +1,43 @@
+{
+	"name": "Vimium C",
+	"@time": "2023/3/8 15:43:31",
+	"time": 1678261411864,
+	"environment": {
+		"extension": "1.99.97",
+		"platform": "mac",
+		"chromium": 110
+	},
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"unmap H",
+		"unmap L",
+		"unmap J",
+		"unmap K",
+		"unmap gt",
+		"unmap gT",
+		"unmap <c-e>",
+		"",
+		"map <c-j> scrollDown",
+		"map <c-k> scrollUp",
+		"map <c-d> scrollPageDown",
+		"map <c-u> scrollPageUp",
+		"map <c-o> goBack",
+		"map <c-i> goForward",
+		"map H previousTab",
+		"map L nextTab",
+		"map v LinkHints.activateSelect",
+		"map sb enterFindMode",
+		"map cl closeTabsOnRight",
+		"map i focusInput",
+		"map gi LinkHints.activateEdit",
+		"",
+		"mapkey <c-q> <esc>",
+		"mapkey <c-a> ^",
+		"mapkey <c-e> $",
+		""
+	],
+	"searchUrl": "https://www.google.com/search?q=$s",
+	"showAdvancedOptions": false,
+	"vimSync": true
+}

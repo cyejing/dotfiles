@@ -388,17 +388,31 @@ endfunction
 
 
 """"" mapping
-map <leader>q :x<cr>
+nnoremap <leader>q :x<cr>
 
-map <C-E> $
-map <C-A> ^
-map r <C-r>
-map <C-J> 8j
-map <C-K> 8k
+nnoremap <C-E> $
+nnoremap <C-A> ^
+nnoremap r <C-r>
+nnoremap <C-J> 8j
+nnoremap <C-K> 8k
 
 
-map <C-Q> <Esc>
-imap <C-Q> <Esc>
+nnoremap <C-Q> <Esc>
+inoremap <C-Q> <Esc>
+
+inoremap <C-s> <C-f>
+inoremap <C-a> <ESC>I
+inoremap <C-e> <ESC>A
+inoremap <C-f> <Right>
+inoremap <C-l> <Right>
+inoremap <C-b> <Left>
+inoremap <A-f> <C-o>w
+inoremap <A-b> <C-o>b
+inoremap <C-d> <del>
+inoremap <C-k> <C-o>C
+inoremap <C-y> <C-o>h<c-o>p
+inoremap <C-x><C-u> <C-o>u
+
 " imap <C-X> <BS>
 " imap <C-C> <DEL>
 " imap <C-H> <Left>

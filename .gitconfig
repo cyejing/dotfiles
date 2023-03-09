@@ -15,6 +15,7 @@
     co = checkout
     pf = push --force-with-lease
     st = status
+    lg = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset) - %s - %an %C(bold yellow)%d%C(reset)' --all
 [merge]
     ff = only
 	tool = vimdiff

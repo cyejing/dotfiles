@@ -1,12 +1,14 @@
 {
 	"name": "Vimium C",
-	"@time": "2023/3/8 15:43:31",
-	"time": 1678261411864,
+	"@time": "2023/3/9 11:16:20",
+	"time": 1678331780140,
 	"environment": {
 		"extension": "1.99.97",
 		"platform": "mac",
 		"chromium": 110
 	},
+	"allBrowserUrls": true,
+	"grabBackFocus": true,
 	"keyLayout": 2,
 	"keyMappings": [
 		"#!no-check",
@@ -26,11 +28,13 @@
 		"map <c-i> goForward",
 		"map H previousTab",
 		"map L nextTab",
-		"map v LinkHints.activateSelect",
 		"map sb enterFindMode",
 		"map cl closeTabsOnRight",
 		"map i focusInput",
 		"map gi LinkHints.activateEdit",
+		"map gh LinkHints.activateHover",
+		"map gj LinkHints.activateFocus",
+		"",
 		"",
 		"mapkey <c-q> <esc>",
 		"mapkey <c-a> ^",

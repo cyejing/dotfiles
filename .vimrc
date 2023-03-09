@@ -32,6 +32,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
+set number
 
 " Enable filetype plugins
 filetype plugin on
@@ -398,15 +399,14 @@ map <C-K> 8k
 
 map <C-Q> <Esc>
 imap <C-Q> <Esc>
-
-imap <C-X> <BS>
-imap <C-C> <DEL>
-imap <C-H> <Left>
-imap <C-J> <Down>
-imap <C-K> <Up>
-imap <C-L> <Right>
-imap <C-B> <ESC>ea<C-W>
-imap <C-P> <ESC>pa
+" imap <C-X> <BS>
+" imap <C-C> <DEL>
+" imap <C-H> <Left>
+" imap <C-J> <Down>
+" imap <C-K> <Up>
+" imap <C-L> <Right>
+" imap <C-B> <ESC>ea<C-W>
+" imap <C-P> <ESC>pa
 
 vmap <C-E> $
 vmap <C-A> ^
@@ -420,4 +420,3 @@ call plug#begin()
 Plug 'easymotion/vim-easymotion'
 map f <Plug>(easymotion-bd-f)
 call plug#end()
-

@@ -1,4 +1,4 @@
-## My dotfiles sync
+## My dotfiles sync.
 命令行脚本配置同步工具
 
 #### For dep.sh

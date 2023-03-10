@@ -1,7 +1,7 @@
 ## My dotfiles sync.
 命令行脚本配置同步工具
 
-#### For dep.sh.
+#### For dep.sh
 该脚本自动安装以下依赖
 
 install `oh-my-zsh`

@@ -195,6 +195,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+""""" setting
+set clipboard^=unnamed,unnamedplus
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -413,20 +416,11 @@ inoremap <C-k> <C-o>C
 inoremap <C-y> <C-o>h<c-o>p
 inoremap <C-x><C-u> <C-o>u
 
-" imap <C-X> <BS>
-" imap <C-C> <DEL>
-" imap <C-H> <Left>
-" imap <C-J> <Down>
-" imap <C-K> <Up>
-" imap <C-L> <Right>
-" imap <C-B> <ESC>ea<C-W>
-" imap <C-P> <ESC>pa
-
-vmap <C-E> $
-vmap <C-A> ^
-vmap <C-Q> <ESC>
-vmap <C-j> 8j
-vmap <C-k> 8k
+vnoremap <C-E> $
+vnoremap <C-A> ^
+vnoremap <C-Q> <ESC>
+vnoremap <C-j> 8j
+vnoremap <C-k> 8k
 
 
 """"" plug

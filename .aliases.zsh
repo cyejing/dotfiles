@@ -1,9 +1,9 @@
 # Basic
 # alias ls="gls --color -h --group-directories-first -F"
-# alias vi='lvim'
-# alias vim='lvim'
-# alias nvim='lvim'
-alias tvim='lvim -c terminal'
+alias v='vim'
+alias nv='nvim'
+alias lv='lvim'
+alias tv='lvim -c terminal'
 alias ll='ls -l'
 alias la='ls -a'
 alias k='kubectl'

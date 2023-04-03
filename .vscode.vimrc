@@ -424,7 +424,8 @@ vnoremap <C-k> 8k
 
 
 """"" plug
-call plug#begin()
-Plug 'easymotion/vim-easymotion'
-map sj <Plug>(easymotion-bd-f)
-call plug#end()
+" call plug#begin()
+" Plug 'easymotion/vim-easymotion'
+Plug 'asvetliakov/vim-easymotion'
+map f <Plug>(easymotion-bd-f)
+" call plug#end()

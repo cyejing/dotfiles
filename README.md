@@ -1,5 +1,6 @@
 ## My dotfiles sync
 命令行脚本配置同步工具
+222
 
 #### For dep.sh
 该脚本自动安装以下依赖

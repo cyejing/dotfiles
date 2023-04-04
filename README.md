@@ -8,7 +8,7 @@
 install `oh-my-zsh`
 
 install `vim-plug`
-
+333
 
 #### For sync_in.sh
 同步当前用户的配置到仓库

@@ -84,7 +84,7 @@ plugins=(
     rust
     mvn
     docker
-    kubelet
+    kubectl
     npm
     zsh-autosuggestions
     zsh-syntax-highlighting

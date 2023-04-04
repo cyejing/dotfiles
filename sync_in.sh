@@ -9,6 +9,9 @@ function doIt() {
         --include ".vscode.vimrc" \
         --include ".m2" \
         --include ".m2/settings.xml" \
+        --include ".config" \
+        --include ".config/go" \
+        --include ".config/go/env" \
         --include ".npmrc" \
         --include ".p10k.zsh" \
         --include ".vimrc" \

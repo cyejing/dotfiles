@@ -39,3 +39,4 @@
 	path = /usr/local/bin/lvim
 [pull]
 	rebase = false
+; nnn

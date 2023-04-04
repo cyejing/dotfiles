@@ -16,3 +16,4 @@ install `vim-plug`
 #### For sync_out.sh
 同步仓库配置到当前用户目录
 333
+444

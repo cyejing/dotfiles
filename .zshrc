@@ -83,6 +83,9 @@ plugins=(
     macos
     rust
     mvn
+    docker
+    kubelet
+    npm
     zsh-autosuggestions
     zsh-syntax-highlighting
 )

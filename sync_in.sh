@@ -6,6 +6,7 @@ function doIt() {
         --include ".gitconfig" \
         --include ".gitignore" \
         --include ".ideavimrc" \
+        --include ".vscode.vimrc" \
         --include ".m2" \
         --include ".m2/settings.xml" \
         --include ".npmrc" \

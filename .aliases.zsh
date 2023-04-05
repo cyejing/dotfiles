@@ -10,7 +10,7 @@ alias k='kubectl'
 
 # Proxy
 alias proxy='export all_proxy=socks5h://127.0.0.1:1080 && export HTTPS_PROXY=http://127.0.0.1:1080'
-alias unproxy='unset all_proxy'
+alias unproxy='unset all_proxy && unset HTTPS_PROXY'
 
 # Git
 alias gst="git status"

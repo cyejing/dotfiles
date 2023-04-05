@@ -393,9 +393,9 @@ endfunction
 """"" mapping
 nnoremap <leader>q :x<cr>
 
+" nnoremap r <C-r>
 nnoremap <C-E> $
 nnoremap <C-A> ^
-nnoremap r <C-r>
 nnoremap <C-J> 8j
 nnoremap <C-K> 8k
 

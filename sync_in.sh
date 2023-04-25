@@ -12,6 +12,7 @@ function doIt() {
         --include ".config" \
         --include ".config/go" \
         --include ".config/go/env" \
+        --include ".config/config.py" \
         --include ".npmrc" \
         --include ".p10k.zsh" \
         --include ".vimrc" \

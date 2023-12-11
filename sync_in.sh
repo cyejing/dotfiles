@@ -11,6 +11,10 @@ function doIt() {
         --include ".m2/settings.xml" \
         --include ".config" \
         --include ".config/go" \
+        --include ".config/kitty" \
+        --include ".config/kitty/kitty.conf" \
+        --include ".config/kitty/current-theme.conf" \
+        --include ".config/kitty" \
         --include ".config/go/env" \
         --include ".npmrc" \
         --include ".p10k.zsh" \

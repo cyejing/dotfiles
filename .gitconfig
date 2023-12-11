@@ -1,6 +1,6 @@
 [user]
-    name = born
-    email = jing23501@qq.com
+    name = cyejing
+    email = chenyejing@didiglobal.com
 [http "https://github.com"]
     proxy = http://127.0.0.1:1080
 [http "https://gitlab.com"]

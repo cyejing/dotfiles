@@ -28,5 +28,7 @@ define_keymap(re.compile("Firefox|Google-chrome"),{
     K("LM-BACKSPACE"): K("LC-BACKSPACE"),
     K("RC-LEFT_BRACE"): K("LM-LEFT"),
     K("RC-RIGHT_BRACE"): K("LM-RIGHT"),
-    K("RC-LM-i"): K("LC-Shift-i")
+    K("RC-LM-i"): K("LC-Shift-i"),
+    K("RC-C"): K("LC-Shift-Insert"),
+    K("RC-V"): K("LC-Shift-v")
 },"Firefox and Chrome")

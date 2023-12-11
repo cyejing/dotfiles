@@ -16,6 +16,7 @@ function doIt() {
         --include ".config/kitty/current-theme.conf" \
         --include ".config/kitty" \
         --include ".config/go/env" \
+        --include ".config/config.py" \
         --include ".npmrc" \
         --include ".p10k.zsh" \
         --include ".vimrc" \

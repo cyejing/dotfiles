@@ -9,6 +9,8 @@ function doIt() {
         --include ".vscode.vimrc" \
         --include ".m2" \
         --include ".m2/settings.xml" \
+        --include ".cargo" \
+        --include ".cargo/config" \
         --include ".config" \
         --include ".config/go" \
         --include ".config/kitty" \

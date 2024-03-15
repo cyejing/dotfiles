@@ -83,7 +83,6 @@ plugins=(
     macos
     rust
     mvn
-    docker
     kubectl
     npm
     zsh-autosuggestions

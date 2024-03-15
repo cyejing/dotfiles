@@ -4,7 +4,7 @@ alias v='vim'
 alias nv='nvim'
 alias lv='lvim'
 alias tv='lvim -c terminal'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -a'
 alias k='kubectl'
 
@@ -13,13 +13,9 @@ alias proxy='export all_proxy=socks5h://127.0.0.1:1080 && export HTTPS_PROXY=htt
 alias unproxy='unset all_proxy && unset HTTPS_PROXY'
 
 # Git
-alias gst="git status"
-alias gb="git branch"
-alias gc="git checkout"
 alias gl="git log --oneline --decorate --color"
 alias amend="git add . && git commit --amend --no-edit"
 alias commit="git add . && git commit -m"
-alias diff="git diff"
 alias force="git push --force"
 alias nuke="git clean -df && git reset --hard"
 alias pop="git stash pop"
@@ -50,5 +46,5 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 
 alias ktd="kitten themes Github Dark"
-alias ktl="kitten themes Github"
+alias ktl="kitten themes GitHub Light"
 

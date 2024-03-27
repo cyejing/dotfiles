@@ -32,11 +32,12 @@ alias reloadshell="source $HOME/.zshrc && source ~/.zshenv"
 # jdk
 if [ "$(uname -s)" = "Darwin" ] ; then
     alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
-    alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`"
     alias j17="export JAVA_HOME=`/usr/libexec/java_home -v 17`"
+    alias j21="export JAVA_HOME=`/usr/libexec/java_home -v 21`"
 elif [ "$(uname -s)" = "Linux" ] ; then
     alias j8="sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64"
     alias j17="sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64"
+    alias j21="sudo update-java-alternatives --set /usr/lib/jvm/java-1.21.0-openjdk-amd64"
 fi
 
 # alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

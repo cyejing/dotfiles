@@ -128,8 +128,5 @@ source $ZSH/oh-my-zsh.sh
 ## More
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH=/usr/local/Cellar/ruby/3.2.2_1/bin:$PATH
-export ANDROID_NDK=/Users/chenyejing/Library/Android/sdk/ndk/26.1.10909125
-export NDK_HOME=/Users/chenyejing/Library/Android/sdk/ndk-bundle/ndk-bundle
+export PATH=~/.npm-global/bin:$PATH
+export PATH=/Users/chenyejing/.local/bin:$PATH

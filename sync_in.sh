@@ -3,6 +3,7 @@
 function doIt() {
 	rsync --include ".zshrc" \
         --include ".aliases.zsh" \
+        --include ".shareenv.zsh" \
         --include ".gitconfig" \
         --include ".gitignore" \
         --include ".ideavimrc" \

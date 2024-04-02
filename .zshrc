@@ -120,6 +120,7 @@ source $ZSH/oh-my-zsh.sh
 
 ## my alias
 [[ ! -f ~/.aliases.zsh ]] || source ~/.aliases.zsh
+[[ ! -f ~/.shareenv.zsh ]] || source ~/.shareenv.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -128,5 +129,3 @@ source $ZSH/oh-my-zsh.sh
 ## More
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
-export PATH=~/.npm-global/bin:$PATH
-export PATH=/Users/chenyejing/.local/bin:$PATH

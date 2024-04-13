@@ -3,6 +3,7 @@
 alias v='vim'
 alias nv='nvim'
 alias lv='lvim'
+alias lvr='lvim +enew'
 alias tv='lvim -c terminal'
 alias ll='ls -lh'
 alias la='ls -a'

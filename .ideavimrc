@@ -68,7 +68,8 @@ set surround
 set ReplaceWithRegister
 set NERDTree
 
-map f <Plug>(easymotion-bd-f)
+map sd <Plug>(easymotion-bd-f)
+map sc <Plug>(easymotion-bd-f)
 let g:NERDTreeMapActivateNode="l"
 """"""""""""""""""""""""""""""""""""""IDEA Action""""""""""""""""""""""""""""""""
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
@@ -81,8 +82,8 @@ map <S-L> <Action>(NextTab)
 
 map sf <Action>(GotoFile)
 map sp <Action>(ManageRecentProjects)
-map so <Action>(RecentFiles)
-map st <Action>(FindInPath)
+map ss <Action>(RecentFiles)
+map st <Action>(FindInProject)
 map sh <Action>(FileStructurePopup)
 
 map gf <Action>(ReformatCode)
@@ -90,12 +91,15 @@ map gn <Action>(CommentByLineComment)
 map <C-.> <Action>(CommentByLineComment)
 map ga <Action>(CodeCompletion)
 map gd <Action>(GotoDeclaration)
+map gr <Action>(GotoDeclaration)
 map gc <Action>(ShowUsages)
 map ge <Action>(GotoNextError)
 map gi <Action>(GotoImplementation)
-map gr <Action>(GotoDeclaration)
 map gs <Action>(GotoSuperMethod)
 map gl <Action>(ShowErrorDescription)
+map gj <Action>(GotoNextError)
+map gk <Action>(GotoPreviousError)
+
 
 """ sidebar
 map <leader>h <Action>(ActivateStructureToolWindow)

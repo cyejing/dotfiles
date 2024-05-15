@@ -32,7 +32,7 @@
 [credential]
     helper = store
 [core]
-    editor = /usr/local/bin/lvim
+    editor = lvim
     excludesfile = ~/.gitignore
 [difftool]
 	prompt = false
@@ -40,6 +40,6 @@
 [mergetool]
 	trustExitCode = true
 [mergetool "vimdiff"]
-	path = /usr/local/bin/lvim
+	path = lvim
 [init]
 	defaultBranch = main

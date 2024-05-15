@@ -100,14 +100,13 @@ map gk <Action>(GotoPreviousError)
 
 
 map cl <Action>(CloseAllToTheRight)
-
-""" sidebar
-map <C-M> <Action>(ActivateProjectToolWindow)
-map <leader>h <Action>(ActivateStructureToolWindow)
-map <leader>x <Action>(HideAllWindows)
-
 map <leader>lr <Action>(RenameElement)
 
+""" sidebar
+nmap <C-M> :NERDTreeToggle <CR>
+nmap <C-H> <Action>(ActivateProjectToolWindow)
+map <leader>h <Action>(ActivateStructureToolWindow)
+map <leader>x <Action>(HideAllWindows)
 map <leader>bx <Action>(CloseAllEditorsButActive)
 
 map <leader>s <Action>(SelectInProjectView)

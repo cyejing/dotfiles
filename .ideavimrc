@@ -68,7 +68,6 @@ set surround
 set ReplaceWithRegister
 set NERDTree
 
-map sd <Plug>(easymotion-bd-f)
 map sc <Plug>(easymotion-bd-f)
 let g:NERDTreeMapActivateNode="l"
 """"""""""""""""""""""""""""""""""""""IDEA Action""""""""""""""""""""""""""""""""
@@ -88,7 +87,6 @@ map sh <Action>(FileStructurePopup)
 
 map gf <Action>(ReformatCode)
 map gn <Action>(CommentByLineComment)
-map <C-.> <Action>(CommentByLineComment)
 map ga <Action>(CodeCompletion)
 map gd <Action>(GotoDeclaration)
 map gr <Action>(GotoDeclaration)
@@ -101,21 +99,22 @@ map gj <Action>(GotoNextError)
 map gk <Action>(GotoPreviousError)
 
 
-""" sidebar
-map <leader>h <Action>(ActivateStructureToolWindow)
-map <leader>m <Action>(ActivateProjectToolWindow)
-map <leader>e <Action>(ActivateProjectToolWindow)
-map <leader>bc <Action>(CloseAllEditorsButActive)
-map <leader>bx <Action>(CloseAllEditorsButActive)
-map <leader>x <Action>(HideAllWindows)
 map cl <Action>(CloseAllToTheRight)
 
-""" run
-map <leader>r <Action>(Run)
-map <leader>d <Action>(Debug)
+""" sidebar
+map <C-M> <Action>(ActivateProjectToolWindow)
+map <leader>h <Action>(ActivateStructureToolWindow)
+map <leader>x <Action>(HideAllWindows)
 
 map <leader>lr <Action>(RenameElement)
-map <leader>bc <Action>(CloseAllEditorsButActive)
 
+map <leader>bx <Action>(CloseAllEditorsButActive)
+
+map <leader>s <Action>(SelectInProjectView)
+map <leader>ga <Action>(Annotate)
+
+" sethandler
+sethandler <C-J> n-v:vim i:ide
+sethandler <C-K> n-v:vim i:ide
 
 " Find more examples here: https://jb.gg/share-ideavimrc

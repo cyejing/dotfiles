@@ -65,7 +65,6 @@ imap <C-E> <ESC>A
 set easymotion
 set ideajoin
 set surround
-set ReplaceWithRegister
 set NERDTree
 
 map sc <Plug>(easymotion-bd-f)

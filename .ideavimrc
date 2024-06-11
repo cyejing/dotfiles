@@ -69,6 +69,10 @@ set NERDTree
 
 map sc <Plug>(easymotion-bd-f)
 let g:NERDTreeMapActivateNode="l"
+let g:NERDTreeMapOpenVSplit="s"
+let g:NERDTreeMapPreviewVSplit="v"
+let g:NERDTreeMapJumpParent="h"
+let g:NERDTreeMapCloseDir="H"
 """"""""""""""""""""""""""""""""""""""IDEA Action""""""""""""""""""""""""""""""""
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "map <C-Q> <Action>(ReformatCode)
@@ -110,6 +114,8 @@ map <leader>bx <Action>(CloseAllEditorsButActive)
 
 map <leader>s <Action>(SelectInProjectView)
 map <leader>ga <Action>(Annotate)
+map <leader>gj <Action>(VcsShowNextChangeMarker)
+map <leader>gk <Action>(VcsShowPrevChangeMarker)
 
 " sethandler
 sethandler <C-J> n-v:vim i:ide

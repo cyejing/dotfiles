@@ -85,6 +85,7 @@ plugins=(
     mvn
     kubectl
     npm
+    yarn
     zsh-autosuggestions
     zsh-syntax-highlighting
 )

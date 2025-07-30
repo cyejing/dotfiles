@@ -116,6 +116,7 @@ map <leader>s <Action>(SelectInProjectView)
 map <leader>ga <Action>(Annotate)
 map <leader>gj <Action>(VcsShowNextChangeMarker)
 map <leader>gk <Action>(VcsShowPrevChangeMarker)
+map <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 " sethandler
 sethandler <C-J> n-v:vim i:ide

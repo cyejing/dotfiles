@@ -9,7 +9,7 @@ function doIt() {
         --include ".ideavimrc" \
         --include ".vscode.vimrc" \
         --include ".cargo" \
-        --include ".cargo/config" \
+        --include ".cargo/config.toml" \
         --include ".config" \
         --include ".config/go" \
         --include ".config/kitty" \

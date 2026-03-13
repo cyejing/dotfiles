@@ -122,6 +122,7 @@ source $ZSH/oh-my-zsh.sh
 ## my alias
 [[ ! -f ~/.aliases.zsh ]] || source ~/.aliases.zsh
 [[ ! -f ~/.shareenv.zsh ]] || source ~/.shareenv.zsh
+[[ ! -f ~/.llmenv.zsh ]] || source ~/.llmenv.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

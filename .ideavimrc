@@ -75,7 +75,7 @@ let g:NERDTreeMapJumpParent="h"
 let g:NERDTreeMapCloseDir="H"
 """"""""""""""""""""""""""""""""""""""IDEA Action""""""""""""""""""""""""""""""""
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"map <C-Q> <Action>(ReformatCode)
+map <C-Q> <Action>(ReformatCode)
 
 map <C-I> <Action>(Forward)
 map <C-O> <Action>(Back)

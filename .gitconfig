@@ -1,5 +1,5 @@
 [user]
-    name = cyejing
+    name = chenyejing
     email = chenyejing@didiglobal.com
 [http "https://github.com"]
     proxy = http://127.0.0.1:1080
@@ -43,3 +43,5 @@
 	path = lvim
 [init]
 	defaultBranch = main
+[safe]
+	directory = *

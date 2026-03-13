@@ -11,7 +11,7 @@ export PATH=${HOME}/go/bin:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 export JDTLS_HOME=${HOME}/.local/share/nvim/lsp_servers/jdtls
 export HELM_EXPERIMENTAL_OCI=1
-. "$HOME/.cargo/env"
+[[ ! -f ~/.cargo/env ]] || source ~/.cargo/env
 
 # export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"
 # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"

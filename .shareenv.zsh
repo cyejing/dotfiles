@@ -14,7 +14,7 @@ export HELM_EXPERIMENTAL_OCI=1
 [[ ! -f ~/.cargo/env ]] || source ~/.cargo/env
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="/Users/chenyejing/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -26,11 +26,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 # Set non-default Git remotes for Homebrew/brew and Homebrew/homebrew-core.
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # jdk
 if [ "$(uname -s)" = "Darwin" ] ; then
     alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"

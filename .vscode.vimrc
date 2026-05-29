@@ -395,6 +395,7 @@ nnoremap <leader>q :x<cr>
 
 nnoremap <C-E> $
 nnoremap <C-A> ^
+nnoremap r <C-r>
 nnoremap <C-J> 8j
 nnoremap <C-K> 8k
 
@@ -425,6 +426,5 @@ vnoremap <C-k> 8k
 """"" plug
 " call plug#begin()
 " Plug 'easymotion/vim-easymotion'
-" Plug 'asvetliakov/vim-easymotion'
 " map sc <Plug>(easymotion-bd-f)
 " call plug#end()

@@ -3,19 +3,26 @@
 
 [target.x86_64-unknown-linux-musl]
 linker = "x86_64-linux-musl-gcc"
+[target.aarch64-unknown-linux-musl]
+linker = "aarch64-linux-musl-gcc"
 [target.x86_64-pc-windows-gnu]
 linker = "x86_64-w64-mingw32-gcc"
+[target.x86_64-pc-windows-msvc]
+linker = "x86_64-w64-mingw32-gcc"
+ar = "x86_64-w64-mingw32-ar"
+rustflags = ["-C", "link-arg=-L/usr/local/opt/openssl/lib"]
 
 
 [source.crates-io]
 replace-with = 'rsproxy-sparse'
 # replace-with = 'rsproxy'
-[source.rsproxy-sparse]
-registry = "sparse+https://rsproxy.cn/index/"
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
+
 [net]
 git-fetch-with-cli = true
 

@@ -46,3 +46,11 @@ elif [ "$(uname -s)" = "Linux" ] ; then
     alias j17="sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64"
     alias j21="sudo update-java-alternatives --set /usr/lib/jvm/java-1.21.0-openjdk-amd64"
 fi
+
+export PNPM_HOME="/Users/chenyejing/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

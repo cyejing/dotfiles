@@ -19,12 +19,15 @@
     st = status
     sw = switch
     lg = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset) - %s - %an %C(bold yellow)%d%C(reset)' --all
+	pullall = "!f() { \\\n  echo \"=== 1. 拉取主项目最新代码 ===\"; \\\n  git pull \"$@\"; \\\n  echo \"\\n=== 2. 拉取所有子模块远程 main 分支最新代码 ===\"; \\\n  git submodule update --remote --init --recursive; \\\n  echo \"\\n✅ 主项目和子模块已全部更新到最新！\"; \\\n}; f"
+	pushall = "!f() { \\\n  echo \"=== 1. 推送所有子模块修改 ===\"; \\\n  git submodule foreach --recursive \"git push || true\"; \\\n  echo \"\\n=== 2. 推送主项目修改 ===\"; \\\n  git push \"$@\"; \\\n  echo \"\\n✅ 主项目和子模块已全部推送！\"; \\\n}; f"
 [fetch]
     prune = true
 [pull]
     autostash = true
 	rebase = false
     prune = true
+	recurseSubmodules = true
 [merge]
 	autostash = true
 [diff]
@@ -34,6 +37,7 @@
 [core]
     editor = lvim
     excludesfile = ~/.gitignore
+	autocrlf = input
 [difftool]
 	prompt = false
 	trustExitCode = true
@@ -45,3 +49,8 @@
 	defaultBranch = main
 [safe]
 	directory = *
+[submodule]
+	recurse = true
+	update = rebase
+[push]
+	recurseSubmodules = on-demand

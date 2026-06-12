@@ -27,6 +27,7 @@
     autostash = true
 	rebase = false
     prune = true
+	recurseSubmodules = true
 [merge]
 	autostash = true
 [diff]
@@ -36,6 +37,7 @@
 [core]
     editor = lvim
     excludesfile = ~/.gitignore
+	autocrlf = input
 [difftool]
 	prompt = false
 	trustExitCode = true

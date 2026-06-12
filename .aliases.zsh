@@ -11,7 +11,7 @@ alias k='kubectl'
 
 # Proxy
 alias proxy='export ALL_PROXY=socks5h://127.0.0.1:1080 && export HTTP_PROXY=http://127.0.0.1:1080 && export HTTPS_PROXY=http://127.0.0.1:1080'
-alias proxyman='export ALL_PROXY=socks5h://127.0.0.1:9090 && export HTTPS_PROXY=http://127.0.0.1:9090'
+alias proxyman='export ALL_PROXY=socks5h://127.0.0.1:9091 && export HTTP_PROXY=http://127.0.0.1:9090 && export HTTPS_PROXY=http://127.0.0.1:9090'
 alias unproxy='unset ALL_PROXY && unset HTTP_PROXY && unset HTTPS_PROXY'
 
 # Git
@@ -37,6 +37,52 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 
-alias ktd="kitten themes Github Dark"
-alias ktl="kitten themes GitHub Light"
+# Theme switcher: theme [light|dark]  (no arg = toggle)
+function theme() {
+    local KITTY_DIR="$HOME/.config/kitty"
+    local CLAUDE_SETTINGS="$HOME/.claude/settings.json"
+
+    # Detect current theme from conf header
+    local current="light"
+    grep -q "## name: GitHub Dark" "$KITTY_DIR/current-theme.conf" 2>/dev/null && current="dark"
+
+    # Resolve target
+    local target="${1:-}"
+    case "$target" in
+        light|dark) ;;
+        "")
+            [[ "$current" == "light" ]] && target="dark" || target="light"
+            ;;
+        *)
+            echo "Usage: theme [light|dark]  (no arg = toggle)"
+            echo "Current: GitHub $current"
+            return 1
+            ;;
+    esac
+
+    local theme_file="$KITTY_DIR/github-${target}.conf"
+    if [[ ! -f "$theme_file" ]]; then
+        echo "Error: $theme_file not found"
+        return 1
+    fi
+
+    # Apply kitty theme and reload all kitty windows
+    cp "$theme_file" "$KITTY_DIR/current-theme.conf"
+    # macOS kitty runs as full path, pgrep by name doesn't work
+    kill -USR1 $(pgrep -f "kitty.app/Contents/MacOS/kitty") 2>/dev/null || true
+    # Also update colors immediately for all open windows via remote control
+    kitty @ set-colors --all --configured "$theme_file" 2>/dev/null || true
+
+    # Update Claude Code theme
+    if [[ -f "$CLAUDE_SETTINGS" ]]; then
+        local tmp
+        tmp=$(mktemp)
+        jq ".theme = \"$target\"" "$CLAUDE_SETTINGS" > "$tmp" && mv "$tmp" "$CLAUDE_SETTINGS"
+    fi
+
+    echo "Switched to GitHub ${(C)target} theme"
+}
+alias ktl="theme light"
+alias ktd="theme dark"
+alias ktt="theme"
 

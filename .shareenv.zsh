@@ -11,7 +11,7 @@ export PATH=${HOME}/go/bin:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 export JDTLS_HOME=${HOME}/.local/share/nvim/lsp_servers/jdtls
 export HELM_EXPERIMENTAL_OCI=1
-[[ ! -f ~/.cargo/env ]] || source ~/.cargo/env
+. "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/Users/chenyejing/Library/pnpm"
@@ -28,8 +28,12 @@ export NVM_DIR="$HOME/.nvm"
 # brew
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 # Set non-default Git remotes for Homebrew/brew and Homebrew/homebrew-core.
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+#export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
+#export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # jdk
@@ -42,11 +46,3 @@ elif [ "$(uname -s)" = "Linux" ] ; then
     alias j17="sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64"
     alias j21="sudo update-java-alternatives --set /usr/lib/jvm/java-1.21.0-openjdk-amd64"
 fi
-
-export PNPM_HOME="/Users/chenyejing/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-eval "$(/opt/homebrew/bin/brew shellenv)"

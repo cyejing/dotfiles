@@ -10,9 +10,9 @@ alias la='ls -a'
 alias k='kubectl'
 
 # Proxy
-alias proxy='export all_proxy=socks5h://127.0.0.1:1080 && export HTTPS_PROXY=http://127.0.0.1:1080'
-alias proxyman='export all_proxy=socks5h://127.0.0.1:9090 && export HTTPS_PROXY=http://127.0.0.1:9090'
-alias unproxy='unset all_proxy && unset HTTPS_PROXY'
+alias proxy='export ALL_PROXY=socks5h://127.0.0.1:1080 && export HTTP_PROXY=http://127.0.0.1:1080 && export HTTPS_PROXY=http://127.0.0.1:1080'
+alias proxyman='export ALL_PROXY=socks5h://127.0.0.1:9090 && export HTTPS_PROXY=http://127.0.0.1:9090'
+alias unproxy='unset ALL_PROXY && unset HTTP_PROXY && unset HTTPS_PROXY'
 
 # Git
 alias gl="git log --oneline --decorate --color"

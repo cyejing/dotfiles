@@ -137,3 +137,10 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_V
 
 # opencode
 export PATH=/Users/chenyejing/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/Users/chenyejing/.bun/_bun" ] && source "/Users/chenyejing/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

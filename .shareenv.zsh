@@ -11,7 +11,7 @@ export PATH=${HOME}/go/bin:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 export JDTLS_HOME=${HOME}/.local/share/nvim/lsp_servers/jdtls
 export HELM_EXPERIMENTAL_OCI=1
-[[ ! -f ~/.cargo/env ]] || source ~/.cargo/env
+. "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/Users/chenyejing/Library/pnpm"
@@ -46,11 +46,3 @@ elif [ "$(uname -s)" = "Linux" ] ; then
     alias j17="sudo update-java-alternatives --set /usr/lib/jvm/java-1.17.0-openjdk-amd64"
     alias j21="sudo update-java-alternatives --set /usr/lib/jvm/java-1.21.0-openjdk-amd64"
 fi
-
-export PNPM_HOME="/Users/chenyejing/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-eval "$(/opt/homebrew/bin/brew shellenv)"

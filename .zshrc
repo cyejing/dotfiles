@@ -1,14 +1,15 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# dcc-completion-begin
+fpath=(/Users/chenyejing/.dcc/completions/zsh $fpath)
+# dcc-completion-end
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -128,12 +129,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-### oh my zsh END ###
-
 
 ## More
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 
-# opencode
-export PATH=/Users/chenyejing/.opencode/bin:$PATH
+
+
+
+# >>> tencent-news-cli >>>
+export TENCENT_NEWS_INSTALL='/Users/chenyejing/.tencent-news-cli'
+export PATH="$TENCENT_NEWS_INSTALL/bin:$PATH"
+# <<< tencent-news-cli <<<

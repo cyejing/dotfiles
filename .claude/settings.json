@@ -1,0 +1,245 @@
+{
+  "env": {
+    "EDITOR": "lvim",
+    "VISUAL": "lvim",
+    "MCP_TOKEN": "dXI4RkRwYkIvMFpZa0FBQUFUSkdXeTJ0akNjczZ1NHNIQlAxcUxrSTR1NGNtOU5MV3gyVFNtcjFaNDZpZGU4QS9WL3JYRHo3NTN2VldBbkdTSFlkUXVIcDJMT0NXRHBUTmliVkRvQT0",
+    "ANTHROPIC_BASE_URL": "http://llm-proxy.intra.xiaojukeji.com/",
+    "ANTHROPIC_AUTH_TOKEN": "sk-Su24ou3AFIIuIt3xfLPYDQ",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "auto-std",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "auto-std",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "auto-mini"
+  },
+  "permissions": {
+    "allow": [
+      "*"
+    ],
+    "deny": [],
+    "defaultMode": "bypassPermissions",
+    "additionalDirectories": [
+      "~/"
+    ],
+    "mode": "bypassPermissions"
+  },
+  "model": "sonnet",
+  "availableModels": [
+    "opus",
+    "sonnet",
+    "haiku"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "_source": "dcc",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook session-start",
+            "timeout": 3000
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "_source": "dcc",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook session-end",
+            "timeout": 3000
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "_source": "pii-detector",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "_source": "dcc",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook post-tool-use",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read|Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Write|Edit|Bash",
+        "_source": "pii-detector",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "jdtls-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "karpathy-skills": {
+      "source": {
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
+      }
+    }
+  },
+  "language": "chinese",
+  "autoUpdatesChannel": "stable",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "editorMode": "normal"
+}

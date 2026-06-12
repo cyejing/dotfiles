@@ -12,14 +12,12 @@ function doIt() {
         --include ".cargo/config.toml" \
         --include ".config" \
         --include ".config/go" \
-        --include ".config/kitty" \
-        --include ".config/kitty/kitty.conf" \
-        --include ".config/kitty/current-theme.conf" \
-        --include ".config/kitty/github-light.conf" \
-        --include ".config/kitty/github-dark.conf" \
-        --include ".config/kitty" \
         --include ".config/go/env" \
+        --include ".config/kitty" \
+        --include ".config/kitty/*" \
         --include ".config/config.py" \
+        --include ".claude" \
+        --include ".claude/settings.json" \
         --include ".npmrc" \
         --include ".p10k.zsh" \
         --include ".vimrc" \

@@ -8,6 +8,7 @@ alias tv='lvim -c terminal'
 alias ll='ls -lh'
 alias la='ls -a'
 alias k='kubectl'
+alias km='kubectl -n managed-agents'
 
 # Proxy
 alias proxy='export ALL_PROXY=socks5h://127.0.0.1:1080 && export HTTP_PROXY=http://127.0.0.1:1080 && export HTTPS_PROXY=http://127.0.0.1:1080'

@@ -129,10 +129,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-### oh my zsh END ###
-
 
 ## More
+
+
+
+
+
+# >>> tencent-news-cli >>>
+export TENCENT_NEWS_INSTALL='/Users/chenyejing/.tencent-news-cli'
+export PATH="$TENCENT_NEWS_INSTALL/bin:$PATH"
+# <<< tencent-news-cli <<<
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-
-

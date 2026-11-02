@@ -1,42 +1,120 @@
 {
+  "autoUpdatesChannel": "stable",
+  "editorMode": "normal",
+  "enabledPlugins": {
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "didi-ee-toolkit@didi-skillshub": true,
+    "jdtls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": false
+  },
   "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-Kn9vW4CCi-dZWb2gMdfX5w",
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8788/claude-code-anthropic/51b514b647108c52",
+    "ANTHROPIC_CUSTOM_HEADERS": "X-Http-User-Agent: DCC/1.7.36 (chenyejing); scene=claude; toolVersion=2.1.287; region=cn\nX-User-Id: chenyejing",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "glm-5.3",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "glm-5.3",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-5.3",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "glm-5.3",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "kimi-k3",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "kimi-k3",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "kimi-k3",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "kimi-k3",
+    "ANTHROPIC_MODEL": "glm-5.3",
+    "ANTHROPIC_MODEL_NAME": "glm-5.3",
+    "ANTHROPIC_SMALL_FAST_MODEL": "glm-5.3",
+    "ANTHROPIC_SMALL_FAST_MODEL_NAME": "glm-5.3",
+    "BETA_TRACING_ENDPOINT": "http://127.0.0.1:9999/api/otel",
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_ENHANCED_TELEMETRY_BETA": "1",
+    "CLAUDE_CODE_PROPAGATE_TRACEPARENT": "1",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "glm-5.3",
+    "CLAUDE_CODE_SUBAGENT_MODEL_NAME": "glm-5.3",
+    "DCC_USER_ID": "1448963",
     "EDITOR": "lvim",
-    "VISUAL": "lvim",
+    "ENABLE_BETA_TRACING_DETAILED": "1",
+    "ENABLE_TOOL_SEARCH": "true",
+    "HTTP_USER_AGENT": "DCC/1.7.36 (chenyejing); scene=claude; toolVersion=2.1.287; region=cn",
     "MCP_TOKEN": "dXI4RkRwYkIvMFpZa0FBQUFUSkdXeTJ0akNjczZ1NHNIQlAxcUxrSTR1NGNtOU5MV3gyVFNtcjFaNDZpZGU4QS9WL3JYRHo3NTN2VldBbkdTSFlkUXVIcDJMT0NXRHBUTmliVkRvQT0",
-    "ANTHROPIC_BASE_URL": "http://llm-proxy.intra.xiaojukeji.com/",
-    "ANTHROPIC_AUTH_TOKEN": "sk-Su24ou3AFIIuIt3xfLPYDQ",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "auto-std",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "auto-std",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "auto-mini"
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "http://127.0.0.1:9999/api/otel",
+    "OTEL_EXPORTER_OTLP_PROTOCOL": "http/json",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_LOG_TOOL_DETAILS": "1",
+    "OTEL_METRICS_EXPORTER": "otlp",
+    "OTEL_RESOURCE_ATTRIBUTES": "user.id=chenyejing,service.name=dcc,service.version=1.7.36,engine.name=claude-code,engine.version=2.1.212,deployment.environment=production",
+    "OTEL_SERVICE_NAME": "dcc",
+    "OTEL_TRACES_EXPORTER": "otlp",
+    "VISUAL": "lvim"
   },
-  "permissions": {
-    "allow": [
-      "*"
-    ],
-    "deny": [],
-    "defaultMode": "bypassPermissions",
-    "additionalDirectories": [
-      "~/"
-    ],
-    "mode": "bypassPermissions"
+  "extraKnownMarketplaces": {
+    "didi-skillshub": {
+      "source": {
+        "source": "url",
+        "url": "https://skillshub.intra.xiaojukeji.com/openapi/claude-code/marketplace.json"
+      }
+    },
+    "karpathy-skills": {
+      "source": {
+        "repo": "forrestchang/andrej-karpathy-skills",
+        "source": "github"
+      }
+    }
   },
-  "model": "sonnet",
-  "availableModels": [
-    "opus",
-    "sonnet",
-    "haiku"
-  ],
   "hooks": {
-    "SessionStart": [
+    "Notification": [
       {
-        "matcher": "",
         "hooks": [
           {
-            "type": "command",
+            "async": true,
             "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/update.js' notify",
+            "type": "command"
           }
         ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "async": true,
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/update.js' permreq",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/update.js' post",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
       },
       {
         "matcher": "*",
@@ -44,23 +122,132 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook session-start",
-            "timeout": 3000
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook post-tool-use",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "async": true,
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "async": true,
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/update.js' pre",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "matcher": "*",
+        "_source": "dcc",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook pre-tool-use",
+            "timeout": 20
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Write|Edit|Bash",
+        "_source": "pii-detector",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.datasec/pii-detector\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "_source": "lca-detector",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/opt/didi/lca/bin/LCA_DCC_M\"",
+            "timeout": 10
           }
         ]
       }
     ],
     "SessionEnd": [
       {
-        "matcher": "",
         "hooks": [
           {
-            "type": "command",
+            "async": true,
             "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
-            "async": true
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/lifecycle.js' end",
+            "type": "command"
           }
         ]
+      },
+      {
+        "_source": "studio",
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
       },
       {
         "matcher": "*",
@@ -69,177 +256,275 @@
           {
             "type": "command",
             "command": "\"/Users/chenyejing/.local/bin/dcc\" hook session-end",
-            "timeout": 3000
+            "timeout": 25
           }
         ]
       }
     ],
-    "SubagentStart": [
+    "SessionStart": [
       {
-        "matcher": "",
         "hooks": [
           {
-            "type": "command",
             "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
-            "async": true
+            "type": "command"
           }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
+        ],
+        "matcher": ""
+      },
       {
-        "matcher": "",
         "hooks": [
           {
-            "type": "command",
-            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10,
-            "async": true
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/lifecycle.js' start",
+            "type": "command"
           }
         ]
       },
       {
-        "matcher": ".*",
+        "_source": "studio",
         "hooks": [
           {
-            "type": "command",
-            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
-            "timeout": 5000
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
           }
-        ]
+        ],
+        "matcher": "*"
       },
-      {
-        "matcher": ".*",
-        "_source": "pii-detector",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
-            "timeout": 5000
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10,
-            "async": true
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10,
-            "async": true
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10,
-            "async": true
-          }
-        ]
-      }
-    ],
-    "PostToolUseFailure": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10,
-            "async": true
-          }
-        ]
-      }
-    ],
-    "PreCompact": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
-            "timeout": 10,
-            "async": true
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
       {
         "matcher": "*",
         "_source": "dcc",
         "hooks": [
           {
             "type": "command",
-            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook post-tool-use",
-            "timeout": 5000
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook session-start",
+            "timeout": 3
           }
         ]
       }
     ],
-    "PreToolUse": [
+    "Stop": [
       {
-        "matcher": "Read|Write|Edit|Bash",
         "hooks": [
           {
-            "type": "command",
-            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
-            "timeout": 5000
+            "async": true,
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/update.js' stop",
+            "type": "command"
           }
         ]
       },
       {
-        "matcher": "Read|Write|Edit|Bash",
+        "_source": "studio",
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "async": true,
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "async": true,
+            "command": "/Users/chenyejing/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "PATH=\"/opt/homebrew/bin:/usr/local/bin${PATH:+:$PATH}\" node '/Users/chenyejing/.claude/statusbar/update.js' prompt",
+            "type": "command"
+          }
+        ]
+      },
+      {
+        "_source": "studio",
+        "hooks": [
+          {
+            "command": "curl -s -m 3 -X POST -H 'Content-Type: application/json' -d @- http://127.0.0.1:13563/api/cli-session/hook",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "matcher": "*",
+        "_source": "dcc",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/chenyejing/.local/bin/dcc\" hook user-prompt-submit",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
         "_source": "pii-detector",
         "hooks": [
           {
             "type": "command",
-            "command": "\"/Users/chenyejing/.claude/hooks/pii-detector\"",
-            "timeout": 5000
+            "command": "\"/Users/chenyejing/.datasec/pii-detector\"",
+            "timeout": 5
           }
         ]
       }
     ]
   },
-  "enabledPlugins": {
-    "jdtls-lsp@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
-    "andrej-karpathy-skills@karpathy-skills": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "karpathy-skills": {
-      "source": {
-        "source": "github",
-        "repo": "forrestchang/andrej-karpathy-skills"
-      }
-    }
-  },
   "language": "chinese",
-  "autoUpdatesChannel": "stable",
+  "permissions": {
+    "additionalDirectories": [
+      "~/"
+    ],
+    "allow": [],
+    "defaultMode": "bypassPermissions",
+    "deny": [
+      "Read(**/id_rsa)",
+      "Edit(**/id_rsa)",
+      "Read(**/id_ed25519)",
+      "Edit(**/id_ed25519)",
+      "Read(**/id_ecdsa)",
+      "Edit(**/id_ecdsa)",
+      "Read(**/*.pem)",
+      "Edit(**/*.pem)",
+      "Read(**/*.key)",
+      "Edit(**/*.key)",
+      "Read(**/*.der)",
+      "Edit(**/*.der)",
+      "Read(**/*.pfx)",
+      "Edit(**/*.pfx)",
+      "Read(**/*.p12)",
+      "Edit(**/*.p12)",
+      "Read(**/*.p8)",
+      "Edit(**/*.p8)",
+      "Read(**/*.p7b)",
+      "Edit(**/*.p7b)",
+      "Read(**/*.ppk)",
+      "Edit(**/*.ppk)",
+      "Read(**/*.crt)",
+      "Edit(**/*.crt)",
+      "Read(**/*.cer)",
+      "Edit(**/*.cer)",
+      "Read(**/*.csr)",
+      "Edit(**/*.csr)",
+      "Read(**/*.gpg)",
+      "Edit(**/*.gpg)",
+      "Read(**/*.asc)",
+      "Edit(**/*.asc)",
+      "Read(**/*.pgp)",
+      "Edit(**/*.pgp)",
+      "Read(**/*.jks)",
+      "Edit(**/*.jks)",
+      "Read(**/*.keystore)",
+      "Edit(**/*.keystore)",
+      "Read(**/*.kdbx)",
+      "Edit(**/*.kdbx)",
+      "Read(**/.env*)",
+      "Edit(**/.env*)",
+      "Read(**/*.secret)",
+      "Edit(**/*.secret)",
+      "Read(**/*.token)",
+      "Edit(**/*.token)"
+    ],
+    "mode": "bypassPermissions"
+  },
   "skipDangerousModePermissionPrompt": true,
-  "theme": "auto",
-  "editorMode": "normal"
+  "skipWebFetchPreflight": true,
+  "statusLine": {
+    "command": "bash /Users/chenyejing/.claude/statusline-command.sh",
+    "type": "command"
+  },
+  "theme": "light"
 }

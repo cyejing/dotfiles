@@ -54,3 +54,5 @@
 	update = rebase
 [push]
 	recurseSubmodules = on-demand
+[url "git@git.xiaojukeji.com:"]
+	insteadOf = https://git.xiaojukeji.com/
